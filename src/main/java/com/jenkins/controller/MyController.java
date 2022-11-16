@@ -1,10 +1,17 @@
 package com.jenkins.controller;
 
+import javax.validation.Valid;
+
 import org.modelmapper.ModelMapper;
+import org.modelmapper.ValidationException;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jenkins.dto.TestDto;
+import com.jenkins.modal.Output;
 import com.jenkins.model.Test;
 
 @RestController
@@ -32,6 +39,25 @@ public class MyController {
 		return main333();
 		
 	}
+	
+	@PostMapping("/api")
+	public String myFun(@RequestBody @Valid Output output) throws MethodArgumentNotValidException {
+		try {
+//			 String sql = "INSERT into employeeTesting(first_name,last_name,email) VALUES (?,?,?)";
+			
+//			   return jdbcTemplate.update(sql, "dd","22", "22");
+//			String s=null;
+//			s.length();
+//			
+			return "Hello";
+		} catch (NullPointerException e) {
+			System.err.println(e);
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+		}
+		return null;
+	}
+
 	
 	
 //	public static void main5(String[] args) {
@@ -147,14 +173,17 @@ public class MyController {
 	
 	@GetMapping("/testapi")
 	public String myFunapi() {
+//		int i=12/0;
+
 		try {
-//			String s=null;
-//			s.length();
-			int i=12/0;
+			String s=null;
+			s.length();
 			return "Here we go";
-		} catch (NullPointerException e) {
-			System.err.println(e);
-		} catch (Exception e) {
+		} 
+//			catch (NullPointerException e) {
+////			System.err.println(e);
+////		}
+			catch (Exception e) {
 			System.err.println(e.getMessage());
 		}
 		return null;
