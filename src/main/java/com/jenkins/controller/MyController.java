@@ -2,6 +2,8 @@ package com.jenkins.controller;
 
 import javax.validation.Valid;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.ValidationException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -16,6 +18,7 @@ import com.jenkins.model.Test;
 
 @RestController
 public class MyController {
+	//lele
 //	@GetMapping("/api/{name}")
 //	public String gethii(@PathVariable("name") String name) {
 //		
@@ -44,10 +47,10 @@ public class MyController {
 	public String myFun(@RequestBody @Valid Output output) throws MethodArgumentNotValidException {
 		try {
 //			 String sql = "INSERT into employeeTesting(first_name,last_name,email) VALUES (?,?,?)";
-			
+//			
 //			   return jdbcTemplate.update(sql, "dd","22", "22");
-//			String s=null;
-//			s.length();
+			String s=null;
+			s.length();
 //			
 			return "Hello";
 		} catch (NullPointerException e) {
@@ -58,7 +61,26 @@ public class MyController {
 		return null;
 	}
 
+	public static final Logger log = LogManager.getLogger(MyController.class);
+
+	public static void main(String[] args) {
 	
+		try {
+//			 String sql = "INSERT into employeeTesting(first_name,last_name,email) VALUES (?,?,?)";
+			
+//			   return jdbcTemplate.update(sql, "dd","22", "22");
+			String s=null;
+			s.length();
+////			
+//			return "Hello";
+//		} catch (NullPointerException e) {
+//log.error(e.getMessage());
+} catch (Exception e) {
+	log.error(e.getMessage(),e);
+
+		}
+//		return null;
+	}
 	
 //	public static void main5(String[] args) {
 //		
