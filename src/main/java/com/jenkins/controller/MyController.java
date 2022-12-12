@@ -5,9 +5,9 @@ import javax.validation.Valid;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.modelmapper.ModelMapper;
-import org.modelmapper.ValidationException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,11 +19,11 @@ import com.jenkins.model.Test;
 @RestController
 public class MyController {
 	//lele
-//	@GetMapping("/api/{name}")
-//	public String gethii(@PathVariable("name") String name) {
-//		
-//		return "Hello" + name + "!";
-//	}
+	@GetMapping("/api/{name}")
+	public String gethii(@PathVariable("name") String name) {
+		
+		return "Hello" + name + "!";
+	}
 //	
 //	@GetMapping("/api2/{name}")
 //	public String getName(@PathVariable("name") String name) {
